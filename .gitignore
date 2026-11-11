@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Generated builds
+dist/
+storybook-static/
+
+# Test output
+test-results/
+playwright-report/
+
+# Historical/generated validation output
+/docs/validation/*
+!/docs/validation/step2-redesign/
+/docs/validation/step2-redesign/*
+!/docs/validation/step2-redesign/figma/
+
+# Historical visual evidence
+/docs/architecture/evidence/
+
+# Environment secrets
+.env*
+!.env.example
+
+# Local files
+.DS_Store
+*.log
+*.zip
+*.7z

@@ -1,0 +1,6 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="26" height="26" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="stroke0_0_405" fill="white">
+<path d="M13 26C5.81994 26 0 20.1801 0 13C0 5.81994 5.81994 0 13 0C20.1801 0 26 5.81994 26 13C26 20.1801 20.1801 26 13 26Z"/>
+</mask>
+<path id="Vector" d="M13 26C5.81994 26 0 20.1801 0 13C0 5.81994 5.81994 0 13 0C20.1801 0 26 5.81994 26 13C26 20.1801 20.1801 26 13 26Z" stroke-width="2" stroke="#C4CED1" mask="url(#stroke0_0_405)"/>
+</svg>

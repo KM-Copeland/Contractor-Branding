@@ -1,0 +1,33 @@
+.shell { min-height:100vh; min-height:100dvh; }
+.content { width:100%; padding-top:50px; }
+.content[data-has-progress="true"] { padding-top:90px; }
+.skip { position:absolute; top:-100px; left:20px; z-index:11; padding:12px; background:white; }
+.skip:focus { top:12px; }
+.header { position:fixed; z-index:10; top:0; left:0; width:100%; height:50px; background:#fff; border-bottom:1px solid #dee4ed; }
+.header[data-has-progress="true"] { display:grid; height:58px; border-bottom:0; grid-template-columns:var(--app-page-gutter) minmax(0,1fr) var(--space-8) var(--sidebar-width) var(--app-page-gutter); grid-template-rows:50px 8px; }
+.nav { width:100%; margin:auto; height:50px; display:flex; align-items:center; padding-right:50px; color:#2a2a26; }
+.header[data-has-progress="true"] .nav { grid-column:1 / -1; grid-row:1; border-bottom:1px solid #dee4ed; box-sizing:border-box; }
+.progressRegion { min-width:0; grid-column:1 / 4; grid-row:2; }
+.logo { height:50px; width:50px; padding:0 11.5px; display:flex; align-items:center; justify-content:center; flex:none; border-right:1px solid #dee4ed; }
+.logo img { width:27px; height:21px; }
+.brandName { margin-left:20px; font-size:14px; line-height:24px; font-weight:700; }
+.navLinks { display:flex; height:100%; margin-left:auto; gap:16px; }
+.navLinks button { color:inherit; background:none; border:0; padding:0 24px; font-size:14px; font-weight:600; }
+.navLinks button:hover { text-decoration:underline; }
+.account { width:54px; margin-left:0; border:0; background:none; padding:0 15px; height:50px; position:relative; display:grid; place-items:center; flex:none; }
+.account img { width:24px; height:24px; }
+.account span { position:absolute; inset:0; display:grid; place-items:center; font-size:10px; font-weight:700; color:var(--color-text); line-height:16px; }
+.menu { display:none; border:0; background:none; padding:7px; margin-left:8px; width:36px; }
+.menu span { display:block; height:2px; background:#2a2a26; margin:4px 0; }
+.header :focus-visible { outline-color:var(--color-primary); }
+@media(max-width:1279px) {
+  .content[data-has-progress="true"] { padding-top:54px; }
+  .header[data-has-progress="true"] { display:block; height:54px; }
+  .header[data-has-progress="true"] .nav { display:flex; }
+  .progressRegion { width:100%; }
+  .nav { padding-right:10px; }
+  .brandName { font-size:14px; }
+  .navLinks { display:none; }
+  .account { margin-left:auto; }
+  .menu { display:block; }
+}

@@ -1,0 +1,31 @@
+@font-face { font-family: Aileron; src: url('/assets/fonts/Aileron-Light.otf') format('opentype'); font-style: normal; font-weight: 300; font-display: swap; }
+@font-face { font-family: Aileron; src: url('/assets/fonts/Aileron-Regular.otf') format('opentype'); font-style: normal; font-weight: 400; font-display: swap; }
+@font-face { font-family: Aileron; src: url('/assets/fonts/Aileron-SemiBold.otf') format('opentype'); font-style: normal; font-weight: 600; font-display: swap; }
+@font-face { font-family: Aileron; src: url('/assets/fonts/Aileron-Bold.otf') format('opentype'); font-style: normal; font-weight: 700; font-display: swap; }
+:root {
+  --font-family: Aileron, sans-serif;
+  --color-primary: #0c30cc; --color-text: #2a2a26; --color-white: #fff;
+  --color-muted: #807e74; --color-cool-grey: #c4ced1; --color-divider: #e1e1de;
+  --color-page: #f5f7fa; --color-selected: #eef2fc; --color-footer: #101010;
+  --color-action-primary: var(--color-primary);
+  --color-text-primary: var(--color-text);
+  --color-surface-default: var(--color-white);
+  --color-border-control: var(--color-cool-grey);
+  --color-border-subtle: #dee4ed;
+  --color-progress-track: #dee4ed;
+  --color-progress-fill: #3155a4;
+  --color-progress-track-breathe: #e7e9ed;
+  --color-border-strong: var(--color-text-primary);
+  --color-focus-indicator: var(--color-action-primary);
+  --color-disabled: rgb(12 48 204 / 50%); --color-disabled-text: rgb(255 255 255 / 50%);
+  --text-xs: 12px; --text-sm: 14px; --text-base: 16px; --text-lg: 18px; --text-xl: 22px; --text-title: 28px;
+  --line-xs: 16px; --line-base: 24px; --line-lg: 32px; --line-title: 40px;
+  --space-1: 5px; --space-2: 10px; --space-3: 15px; --space-4: 20px; --space-5: 24px;
+  --space-6: 30px; --space-7: 32px; --space-8: 40px; --space-9: 50px; --space-10: 80px;
+  --border-control: 1px solid var(--color-cool-grey); --radius-pill: 100px;
+  --shadow-product: 0 4px 5px rgb(0 0 0 / 15%); --shadow-panel: 0 8px 10px rgb(0 0 0 / 5%);
+  --shadow-header: 0 8px 5px rgb(0 0 0 / 20%);
+  --content-width: 1280px; --header-width: 1440px; --sidebar-width: 360px; --control-height: 48px;
+  --app-page-gutter: 50px;
+  --responsive-page-gutter: 20px; --responsive-action-clearance: 87px;
+}

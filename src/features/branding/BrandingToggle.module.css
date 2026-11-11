@@ -1,0 +1,25 @@
+.toggle {
+  display: flex;
+  min-width: 0;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 6px 10px;
+  border: 1px solid #dee4ed;
+  border-radius: 3px;
+  background: #fff;
+  color: #2a2a26;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.toggle img { width: 14px; height: 14px; flex: none; object-fit: contain; }
+.toggle img.disabledIcon { opacity: .38; }
+.selected { border-color: #1b35c9; background: #ecf1ff; color: #0c30cc; }
+.selected img { width: 11px; height: 11px; }
+.toggle:disabled { background: #f4f5f6; color: #b8c0c8; cursor: not-allowed; }
+.toggle.selected:disabled { border-color: #dee4ed; background: #f4f5f6; color: #aab2ba; }
+.toggle:focus-visible { outline: 2px solid #0c30cc; outline-offset: 2px; }

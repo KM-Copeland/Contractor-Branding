@@ -1,0 +1,36 @@
+.previewCarousel { min-width: 0; }
+.carouselViewport { width: 100%; height: 343px; min-width: 0; overflow: hidden; touch-action: pan-y; overscroll-behavior-x: contain; user-select: none; -webkit-user-select: none; }
+.carouselViewport:focus-visible { outline: 2px solid #0c30cc; outline-offset: 2px; }
+.carouselTrack { display: flex; width: 100%; align-items: flex-start; transition: transform 240ms cubic-bezier(.2,.75,.25,1); will-change: transform; }
+.carouselDragging { cursor: grabbing; transition: none; }
+.carouselSlide { min-width: 0; flex: 0 0 100%; }
+.mobilePreviewStage { display: flex; width: 100%; height: 343px; min-width: 0; justify-content: center; }
+.mobileArtboard { position: relative; width: 100%; height: 100%; container-type: inline-size; overflow: hidden; }
+.previewStationary { min-width: 0; }
+.mobileProductSummary { display: block; min-width: 0; min-height: 40px; opacity: 1; transition: opacity 160ms ease-out; }
+.mobileProductIdentity { min-width: 0; }
+.mobileProductSummary h2 { min-width: 0; color: #2a2a26; font-size: 18px; font-weight: 700; line-height: 24px; overflow-wrap: anywhere; }
+.mobileProductType { display: block; color: #87919d; font-size: 10px; line-height: 16px; }
+.previewStatus { display: inline-block; width: 16px; height: 16px; margin-left: 10px; object-fit: contain; vertical-align: middle; }
+.summaryFadingOut { opacity: 0; transition-duration: 110ms; }
+.summaryFadingIn { opacity: 0; transition: none; }
+.mobilePreviewActions { margin-top: 10px; }
+.previewOptions { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5px; }
+.pagination { display: flex; min-height: 24px; align-items: center; justify-content: center; gap: 0; margin: 0 0 8px; }
+.pagination button { display: grid; width: 17px; height: 24px; flex: none; place-items: center; padding: 0; border: 0; background: transparent; }
+.pagination button span { width: 7px; height: 7px; border: 1px solid #dee4ed; border-radius: 50%; background: #fff; }
+.pagination .paginationActive span { border-color: #3155a4; background: #3155a4; }
+.pagination button:focus-visible { outline: 2px solid #0c30cc; outline-offset: 1px; }
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .carouselViewport { height: min(343px, 42vw); }
+  .mobilePreviewStage { height: min(343px, 42vw); }
+  .mobileArtboard { width: min(100%, 640px); height: 100%; }
+  .previewStationary { width: min(100%, 640px); margin: 0 auto; }
+  .mobilePreviewActions { margin-top: 10px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobileProductSummary { transition: none; }
+  .carouselTrack { transition: none; }
+}

@@ -1,0 +1,41 @@
+.formHeading { flex: none; }
+.hint { font-size: 14px; line-height: 24px; }
+.dropzone {
+  display: flex;
+  width: 100%;
+  min-height: 104px;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+  padding: 20px;
+  border: 1px dashed #dee4ed;
+  background: #fafbfc;
+  color: var(--color-text);
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 600;
+  text-align: left;
+  cursor: pointer;
+}
+
+.dropzone:hover,
+.dropzone:focus-visible { border-color: var(--color-primary); background: #f2f5fc; }
+.dropzone span { min-width: 0; }
+.dropzone small { display: block; color: #87919d; font-size: 12px; line-height: 16px; font-weight: 400; }
+.uploadIcon { width: 64px; height: 64px; flex: none; padding: 20px; background: #e9eff7; color: #7592a2; }
+.uploadGuidance { color: #87919d; font-size: 12px; line-height: 16px; }
+.fileCard { position: relative; display: flex; min-height: 104px; align-items: center; gap: 20px; overflow: hidden; padding: 20px; border: 1px dashed #dee4ed; background: #fafbfc; }
+.logoThumb { display: grid; width: 64px; height: 64px; flex: none; place-items: center; }
+.logoThumb img { max-width: 100%; max-height: 100%; object-fit: contain; mix-blend-mode: darken; }
+.logoThumb span { color: var(--color-muted); font-size: 12px; }
+.removeFile { position: absolute; top: 12px; right: 12px; width: 20px; height: 20px; padding: 0; border: 0; background: none; }
+.removeFile img { width: 20px; height: 20px; }
+.sharedNote { display: flex; min-height: 53px; align-items: center; gap: 10px; margin-top: auto; padding-top: 16px; border-top: 1px solid #dee4ed; color: #687580; font-size: 12px; line-height: 16px; }
+.sharedNote::before { content: "i"; display: grid; width: 16px; height: 16px; flex: none; place-items: center; border-radius: 50%; background: #687580; color: #fff; font-size: 11px; font-weight: 700; }
+
+@media (max-width: 767px) {
+  .hint { font-size: 12px; line-height: 18px; }
+  .dropzone { min-height: 108px; gap: 16px; padding: 16px; font-size: 14px; line-height: 20px; }
+  .uploadIcon { width: 56px; height: 56px; padding: 16px; }
+  .sharedNote { min-height: 53px; font-size: 11px; line-height: 15px; }
+}

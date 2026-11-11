@@ -1,0 +1,14 @@
+.card { box-sizing: border-box; display: flex; min-width: 0; flex-direction: column; gap: 20px; padding: 9px 10px; border: 1px solid #dee4ed; background: #fff; }
+.productHeader { display: grid; min-width: 0; min-height: 58px; grid-template-columns: 58px minmax(0, 1fr) 16px; align-items: center; column-gap: 10px; }
+.thumbnail { width: 58px; height: 58px; object-fit: contain; }
+.identity { display: flex; min-width: 0; flex-direction: column; justify-content: center; }
+.identity h2 { min-width: 0; color: #2a2a26; font-size: 14px; font-weight: 700; line-height: 24px; overflow-wrap: anywhere; }
+.identity > span { color: #79838e; font-size: 10px; line-height: 16px; }
+.statusIcon { width: 16px; height: 16px; align-self: start; object-fit: contain; }
+.options { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 5px; }
+
+@media (min-width: 768px) and (max-width: 1279px) {
+  .card { padding: 14px; }
+  .productHeader { grid-template-columns: 64px minmax(0, 1fr) 16px; }
+  .thumbnail { width: 64px; height: 64px; }
+}

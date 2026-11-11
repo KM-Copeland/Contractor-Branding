@@ -1,0 +1,30 @@
+.productArt {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.brandLogo {
+  position: absolute;
+  bottom: 5%;
+  left: 2%;
+  width: 12%;
+  max-height: 18%;
+  object-fit: contain;
+  mix-blend-mode: darken;
+}
+
+.brandText {
+  position: absolute;
+  left: 31.4%;
+  bottom: 2.5%;
+  display: flex;
+  width: 37.2%;
+  flex-direction: column;
+  overflow-wrap: anywhere;
+  color: #4c6774;
+  font-size: 1.73cqw;
+  line-height: 1.333;
+  text-align: center;
+}

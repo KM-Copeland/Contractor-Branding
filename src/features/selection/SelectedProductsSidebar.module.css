@@ -1,0 +1,22 @@
+.sidebar { min-width:0; background:#fff; }
+.panel { display:flex; min-width:0; flex-direction:column; gap:40px; }
+.header { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.header h2 { color:#2a2a26; font-size:22px; line-height:32px; font-weight:700; }
+.header p { margin:0; color:#5f6c78; font-size:14px; line-height:24px; white-space:nowrap; }
+.footer { min-width:0; }
+.footer [data-sidebar-action-row] { display:grid; grid-template-columns:48px minmax(0,1fr); gap:10px; }
+.footer [data-sidebar-action-row] > button:last-child { width:100%; min-height:48px; }
+
+.selection,
+.branding { position:fixed; z-index:2; top:49px; right:var(--app-page-gutter); bottom:0; width:var(--sidebar-width); overflow:hidden; border-left:1px solid #dee4ed; }
+.selection .panel,
+.branding .panel { height:calc(100% - 40px); min-height:0; margin:40px 0 0; padding:0 0 40px 40px; }
+.selection .panel { box-shadow:none; }
+.selection .header,
+.selection .footer,
+.branding .header,
+.branding .footer { flex:none; }
+.selection .footer,
+.branding .footer { margin-top:auto; }
+
+@media(max-width:1279px) { .selection,.branding { display:none; } }

@@ -1,0 +1,36 @@
+.carouselControls { display: flex; align-items: center; gap: 10px; color: #687580; font-size: 12px; }
+.carouselControls button { display: grid; width: 32px; height: 32px; place-items: center; border: 1px solid #dee4ed; background: #fff; color: #687580; font-size: 20px; line-height: 1; }
+.carouselControls button:disabled { color: #c4ced1; }
+.applyBar { display: grid; height: 122px; grid-template-columns: 1fr 1fr; grid-template-rows: 24px 48px; column-gap: 20px; row-gap: 10px; align-content: center; padding: 0 40px; border-bottom: 1px solid #dee4ed; background: #fafbfc; }
+.applyBar > strong { align-self: center; font-size: 14px; line-height: 24px; }
+.applyBar > span { align-self: center; justify-self: end; color: #87919d; font-size: 12px; line-height: 16px; }
+.applyBar .switchLabel { display: flex; min-height: 48px; align-items: center; justify-content: space-between; gap: 8px; padding: 0 20px; border: 1px solid #dee4ed; background: #fff; font-size: 12px; }
+.applyBar .switchLabel > span:first-child { display: flex; align-items: center; gap: 5px; }
+.applyBar .switchLabel > span:first-child img { width: 14px; height: 14px; object-fit: contain; }
+.switchLabel { display: flex; min-height: 20px; align-items: center; justify-content: space-between; gap: 4px; font-size: 12px; }
+.switch { position: relative; width: 36px; height: 20px; flex: none; padding: 2px; border: 0; border-radius: 100px; background: #c4ced1; cursor: pointer; }
+.switch i { display: block; width: 16px; height: 16px; border-radius: 50%; background: #fff; box-shadow: 0 2px 4px rgb(39 39 39 / 10%); transition: transform .15s; }
+.switchOn { background: #0f3cff; }
+.switchOn i { transform: translateX(16px); }
+.switch:disabled { background: #e1e6e8; cursor: not-allowed; }
+.switchDisabled { color: #87919d; }
+.previewProduct { display: flex; height: 86px; flex-direction: column; gap: 2px; padding: 40px 40px 0; font-size: 18px; line-height: 24px; }
+.previewProduct span { color: #87919d; font-size: 12px; line-height: 16px; }
+.previewStage { display: flex; min-height: 452px; justify-content: center; padding: 12px 40px 40px; background: #fff; }
+.previewStage.stageExpanded { min-height: 514px; }
+.artboard { position: relative; align-self: center; width: 81.4%; height: auto; aspect-ratio: 693.333 / 400; container-type: inline-size; overflow: hidden; filter: drop-shadow(0 2px 4px rgb(39 39 39 / 12%)); }
+
+@media (max-width: 1279px) {
+  .previewStage { box-sizing: border-box; height: auto; min-height: 392px; padding: 8px 40px 40px; }
+  .artboard { width: 86%; height: auto; aspect-ratio: 693.333 / 400; }
+}
+
+@media (max-width: 767px) {
+  .carouselControls { gap: 8px; }
+  .carouselControls button { width: 32px; height: 32px; }
+  .applyBar { box-sizing: border-box; height: 102px; grid-template-columns: 1fr 1fr; grid-template-rows: 24px 48px; padding: 10px 16px; column-gap: 12px; row-gap: 8px; }
+  .applyBar .switchLabel { min-height: 44px; padding: 0 10px; }
+  .previewProduct { height: 70px; padding: 14px 16px 0; font-size: 16px; line-height: 22px; }
+  .previewStage { min-height: 356px; padding: 14px; }
+  .artboard { width: 100%; }
+}

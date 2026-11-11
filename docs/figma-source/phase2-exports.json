@@ -1,0 +1,20 @@
+[
+  {
+    "nodeId": "121:2753",
+    "url": "https://www.figma.com/api/mcp/asset/f455f856-2cbc-49b7-acae-095e07b48a8d.jpeg",
+    "format": "jpeg",
+    "sizeBytes": 554161
+  },
+  {
+    "nodeId": "144:1122",
+    "url": "https://www.figma.com/api/mcp/asset/f55af22e-d89b-45ee-b2da-88f00b7be949.jpeg",
+    "format": "jpeg",
+    "sizeBytes": 573110
+  },
+  {
+    "nodeId": "144:1490",
+    "url": "https://www.figma.com/api/mcp/asset/fc4269c6-a124-46d6-a439-a1c355486992.jpeg",
+    "format": "jpeg",
+    "sizeBytes": 645809
+  }
+]

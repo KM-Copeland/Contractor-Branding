@@ -1,0 +1,5 @@
+.indicators { position:absolute; z-index:1; top:9px; right:9px; flex:none; display:flex; align-items:center; gap:5px; color:var(--color-text); }
+.circle { width:20px; height:20px; flex:none; display:grid; place-items:center; border:var(--border-control); border-radius:50%; background:var(--color-white); }
+.combined { width:41px; height:20px; justify-content:center; gap:5px; padding:0 5px; border:var(--border-control); border-radius:var(--radius-pill); background:var(--color-white); }
+.pictureIcon,
+.textIcon { display:block; width:12px; height:12px; flex:none; object-fit:contain; }

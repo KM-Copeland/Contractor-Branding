@@ -1,0 +1,19 @@
+.lineField { display: flex; flex-direction: column; gap: 7px; font-size: 12px; line-height: 16px; font-weight: 700; letter-spacing: 0; }
+.lineField label { display: flex; justify-content: space-between; }
+.lineControls { display: flex; min-width: 0; align-items: center; gap: 8px; }
+.inputWrap { display: flex; height: 48px; min-width: 0; flex: 1; align-items: center; gap: 10px; padding: 0 10px; border: 1px solid #dee4ed; }
+.inputWrap:focus-within { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+.inputWrap input { height: 100%; min-width: 0; flex: 1; border: 0; outline: 0; font: 400 14px/24px Aileron, sans-serif; }
+.inputWrap small { color: var(--color-muted); font-size: 12px; font-weight: 400; letter-spacing: 0; white-space: nowrap; }
+.boldButton { display: grid; width: 48px; height: 48px; flex: none; place-items: center; border: 1px solid #dee4ed; background: #fff; color: var(--color-text); font: 700 18px/1 Aileron, sans-serif; cursor: pointer; }
+.boldButton:hover,
+.boldButtonActive { border-color: var(--color-primary); background: #eef2fc; color: var(--color-primary); }
+
+@media (max-width: 1279px) {
+  .inputWrap input { font-size: 16px; }
+}
+
+@media (max-width: 767px) {
+  .lineField { font-size: 11px; }
+  .inputWrap { height: 48px; }
+}

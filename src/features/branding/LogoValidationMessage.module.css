@@ -1,0 +1,18 @@
+.validation { display: flex; align-items: flex-start; gap: 9px; padding: 8px 10px; border-left: 3px solid; font-size: 12px; line-height: 18px; overflow-wrap: anywhere; }
+.validationIcon { width: 18px; height: 18px; flex: none; display: grid; place-items: center; border: 1px solid currentColor; border-radius: 50%; font-size: 12px; font-weight: 700; line-height: 1; }
+.validationTitle { margin-bottom: 3px; font-weight: 700; }
+.validationContent { min-width: 0; }
+.validationDetails { margin-top: 2px; }
+.validationDetails summary { color: inherit; cursor: pointer; font-size: 10px; line-height: 14px; }
+.validationDetails p { margin-top: 3px; }
+.validationSuccess { color: #27811d; background: #f0f8ee; border-color: #27811d; }
+.validationWarning { color: #805600; background: #fff8e8; border-color: #c18a19; }
+.validationError { color: #aa1b1b; background: #fff1f1; border-color: #aa1b1b; }
+
+@media (max-width: 1279px) {
+  .validationSuccess { position: relative; padding: 0; border: 0; background: transparent; }
+  .validationSuccess .validationContent { display: flex; align-items: center; gap: 6px; }
+  .validationSuccess .validationTitle { margin: 0; font-size: 10px; line-height: 14px; white-space: nowrap; }
+  .validationSuccess .validationDetails { margin: 0 0 0 auto; }
+  .validationSuccess .validationDetails summary { white-space: nowrap; }
+}

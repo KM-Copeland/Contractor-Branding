@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Filled/ddl-icon--global_edit" clip-path="url(#clip0_0_392)">
+<path id="Vector" d="M0 11V16H5L14.8785 6.1215C16.05 4.95 16.05 3.0505 14.8785 1.879L14.121 1.1215C12.9495 -0.05 11.05 -0.05 9.8785 1.1215L0 11ZM4.1715 14H2V11.8285L9 4.8285L11.1715 7L4.1715 14ZM12.586 5.586L10.4145 3.4145L11.293 2.536C11.6835 2.1455 12.3165 2.1455 12.707 2.536L13.4645 3.2935C13.855 3.684 13.855 4.317 13.4645 4.7075L12.586 5.586Z" fill="#151413"/>
+<path id="Vector_2" d="M16 14H10L8 16H16V14Z" fill="#323232"/>
+</g>
+<defs>
+<clipPath id="clip0_0_392">
+<rect width="16" height="16" fill="white"/>
+</clipPath>
+</defs>
+</svg>
