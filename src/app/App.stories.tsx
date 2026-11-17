@@ -5,3 +5,4 @@ const meta = { title: 'Application/Full Workflow', component: App, parameters: {
 export default meta;
 type Story = StoryObj;
 export const InteractiveWorkflow: Story = {};
+export const SignedInNavigationPresentation: Story = { args: { accountPresentation: 'signed-in' }, parameters: { viewport: { defaultViewport: 'mobile390' }, docs: { description: { story: 'The host can request the signed-in drawer label explicitly. This is presentation only and does not represent an authentication session.' } } } };

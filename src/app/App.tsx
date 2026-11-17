@@ -6,8 +6,9 @@ import { CompletionScreen } from '../features/selection/CompletionScreen';
 import { BrandReview } from '../features/branding/BrandReview';
 import { LandingScreen } from '../features/landing/LandingScreen';
 import { NoticeDialog } from '../components/Controls';
+import type { AccountPresentation } from './navigation';
 
-function Workflow() {
+function Workflow({ accountPresentation }: { accountPresentation: AccountPresentation }) {
   const { state, enterBranding, backToProducts, showLanding, showProducts, finish } = useWorkflow();
   const [notice, setNotice] = useState<{ title: string; body: string } | null>(null);
   const [responsiveProgress, setResponsiveProgress] = useState<number | undefined>();
@@ -59,7 +60,7 @@ function Workflow() {
   const reviewing = state.step === 'brand-review';
   const finishing = state.step === 'complete';
   const progress = selecting ? 'select-products' : (reviewing || state.step === 'selection-ready') ? 'brand-review' : finishing ? 'complete' : undefined;
-  return <><AppShell progress={progress} progressValue={responsiveProgress} showNotice={title => setNotice({ title, body: 'This section is outside the product-selection prototype.' })}>
+  return <><AppShell progress={progress} progressValue={responsiveProgress} accountPresentation={accountPresentation} showNotice={(title, body) => setNotice({ title, body: body ?? 'This section is outside the product-selection prototype.' })}>
     {landing && <div data-active-screen="true"><LandingScreen onStart={() => { window.location.hash = 'select-products'; }} /></div>}
     {/* Keep the selection view mounted so its query/category survive navigation. */}
     <div hidden={!selecting} data-active-screen={selecting}><StepOneScreen continueSelection={forward} backToLanding={() => { window.location.hash = 'home'; }} active={selecting} /></div>
@@ -67,4 +68,4 @@ function Workflow() {
     {finishing && <div data-active-screen="true"><CompletionScreen back={() => { window.location.hash = '#select-products'; }} /></div>}
   </AppShell><NoticeDialog notice={notice} close={() => setNotice(null)} /></>;
 }
-export function App() { return <WorkflowProvider><Workflow /></WorkflowProvider>; }
+export function App({ accountPresentation = 'signed-out' }: { accountPresentation?: AccountPresentation }) { return <WorkflowProvider><Workflow accountPresentation={accountPresentation} /></WorkflowProvider>; }

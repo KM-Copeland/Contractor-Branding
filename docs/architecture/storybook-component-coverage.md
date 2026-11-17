@@ -1,6 +1,6 @@
 # Storybook component coverage
 
-The catalog contains one entry for each of the 30 exported production UI components, plus shared foundations, screen compositions and the full application workflow. Storybook's built index contains 111 stories and 31 Autodocs documents. Stories render the production component and CSS; only the wrappers under `src/stories/` prepare realistic state using the existing workflow provider and public actions.
+The catalog contains one entry for each of the 31 exported production UI components, plus shared foundations, screen compositions and the full application workflow. Storybook's built index contains 127 stories and 32 Autodocs documents. Stories render the production component and CSS; only the wrappers under `src/stories/` prepare realistic state using the existing workflow provider and public actions.
 
 ## Coverage matrix
 
@@ -14,6 +14,7 @@ The catalog contains one entry for each of the 30 exported production UI compone
 | Shared feedback | `NoticeDialog` | Design System / Feedback / NoticeDialog | Open, dismiss and reopen, long description |
 | Shared workflow | `WorkflowProgress` | Design System / Feedback / WorkflowProgress | Selection, branding, completion, intermediate progress |
 | Shared layout | `ResponsiveActionFooter` | Design System / Layout / ResponsiveActionFooter | Enabled, disabled, alternate back label |
+| Navigation | `NavigationDrawer` | Navigation / NavigationDrawer | Signed-in/out account presentation, modal open state, close and backdrop dismissal, reduced motion, short viewport scrolling |
 | Product selection | `ProductImprintCapabilities` | Product Selection / Components / ProductImprintCapabilities | Logo and text, either capability, text only, none |
 | Product selection | `ProductCard` | Product Selection / Components / ProductCard | Unselected, selected, text-only capability, long name, interactive selection |
 | Product selection | `ImprintStatusIndicators` | Product Selection / Components / ImprintStatusIndicators | Both off, logo on, text on, both on, muted selection mode |
@@ -43,6 +44,7 @@ The **Design System / Foundations / Colors & Typography** entry documents the sh
 
 - Interactive stories use the real component callbacks. Workflow stories use `WorkflowScenario`, a Storybook-only adapter that calls the app's existing provider actions to select products, set shared imprint content, configure per-product visibility, choose the active product, and advance workflow steps.
 - The full application story renders `App` itself. Focused screen stories render production screen compositions and use representative catalog products.
+- Navigation stories render the production modal drawer and cover both account presentation options. The account actions remain explanatory placeholders until an authentication service exists.
 - Logo upload stories invoke the production file validator. They use temporary browser object URLs and revoke them on removal, replacement or unmount.
 - The carousel story was checked by changing pagination from the initially active `70 Series` to `80 Series`; the product summary and active pagination indicator updated. The Accessibility addon reported zero violations for that scenario (27 passes, one inconclusive check).
 - Storybook's mobile and tablet viewport presets help inspect responsive composition. Chromium-based previews do not establish native iOS Safari or assistive-technology behavior.

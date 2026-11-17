@@ -22,7 +22,7 @@ The package scripts bind Vite to `127.0.0.1`, and Playwright uses a local Vite s
 
 | Change | Owning code |
 | --- | --- |
-| Route/hash, step guard, global navigation | `src/app/App.tsx`, `AppShell.tsx` |
+| Route/hash, step guard, global navigation and account presentation | `src/app/App.tsx`, `AppShell.tsx`, `NavigationDrawer.tsx`, `navigation.ts` |
 | Shared workflow state or transition | `src/domain/workflow/workflowReducer.ts`, validation module and workflow tests; keep React Context as adapter |
 | Product name/image/category/capability or preview placement | `src/data/products.ts`, `src/data/imprintCapabilities.ts`, `src/types/workflow.ts` |
 | Catalog search/filter/card/sidebar | `src/features/selection` |
@@ -52,6 +52,7 @@ Product image and imprint overlay placements use percentages in the product cata
 - The shared desktop rail keeps its heading and actions visible while selected-product groups scroll. Responsive List mode scrolls above the fixed footer; Preview preserves a 24px footer clearance and keeps product identity/status controls stationary while the artwork area adapts.
 - Editable text inputs stay at least 16px on mobile to prevent iOS Safari's automatic focus zoom. Intentional pinch zoom remains enabled.
 - Reduced-motion preferences suppress progress and preview motion. Preserve this when changing animation timing or transition state.
+- The desktop navigation starts at 1280px. Below that width the native modal drawer owns navigation controls, page scroll lock, focus containment/restoration, and backdrop/Escape dismissal. Support remains a regular new-tab link. Account presentation is passed explicitly and does not imply authentication.
 - Chromium assertions cover geometry, keyboard semantics and interaction behavior. They do not establish native iOS Safari rendering or assistive-technology usability. Use a real iPhone/Safari pass for those claims.
 
 ## Figma and visual verification

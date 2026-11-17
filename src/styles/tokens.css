@@ -15,6 +15,7 @@
   --color-progress-track: #dee4ed;
   --color-progress-fill: #3155a4;
   --color-progress-track-breathe: #e7e9ed;
+  --color-navigation-backdrop: rgb(16 16 16 / 50%);
   --color-border-strong: var(--color-text-primary);
   --color-focus-indicator: var(--color-action-primary);
   --color-disabled: rgb(12 48 204 / 50%); --color-disabled-text: rgb(255 255 255 / 50%);

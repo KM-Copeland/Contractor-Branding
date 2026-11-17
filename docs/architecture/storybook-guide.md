@@ -7,7 +7,7 @@ Storybook is the interactive workshop for inspecting existing UI components in i
 - npm is the supported package manager for this pilot. Use `npm ci` for a clean install from `package-lock.json`; `pnpm-lock.yaml` is not synchronized with the Storybook dependencies and was left unchanged.
 - `npm run storybook` starts the workshop at `http://127.0.0.1:6006` independently of Vite's application server.
 - `npm run build-storybook` builds the static workshop into the ignored `storybook-static/` directory.
-- Use the left sidebar to browse the complete catalog: Foundations, shared design controls, product selection, branding, workflow screens, and application shell. The catalog has stories for all 30 exported production UI components, plus screens and the full app. The canvas toolbar includes 320, 390, 414, 768, 1280 and 1440 pixel viewport presets.
+- Use the left sidebar to browse the complete catalog: Foundations, shared design controls, navigation, product selection, branding, workflow screens, and application shell. The catalog has stories for the exported production UI components, plus screens and the full app. The canvas toolbar includes 320, 390, 414, 768, 1280 and 1440 pixel viewport presets.
 - Use Controls to change the story's documented args. Stateful stories also let you click, type, or toggle directly in the canvas; the story wrapper owns only that demonstration state.
 
 ## Add a story
@@ -19,7 +19,7 @@ Storybook is the interactive workshop for inspecting existing UI components in i
 5. For workflow states, reuse `src/stories/WorkflowScenario.tsx`. It prepares scenarios through the app's existing provider actions; keep fixtures, object URLs and layout wrappers inside `src/stories/`.
 6. Add a shared fixture or decorator only when at least two stories benefit from it. A thin wrapper can reuse parent layout classes when a component requires its existing context.
 
-The [component coverage matrix](storybook-component-coverage.md) lists every catalogued production UI component and its scenarios. The [full catalog record](storybook-full-catalog-implementation-record.md) documents completion and verification. The earlier [pilot record](storybook-pilot-implementation-record.md) remains the historical record for the first 26 stories.
+The [component coverage matrix](storybook-component-coverage.md) lists every catalogued production UI component and its scenarios, including the responsive navigation drawer's account and dismissal states. The [full catalog record](storybook-full-catalog-implementation-record.md) documents completion and verification. The earlier [pilot record](storybook-pilot-implementation-record.md) remains the historical record for the first 26 stories.
 
 ## Accessibility and responsive checks
 

@@ -6,7 +6,7 @@ This is a client-only React prototype for selecting product families, preparing 
 
 | Path | Owns |
 | --- | --- |
-| `src/app` | Application composition, hash navigation, shell, and workflow provider |
+| `src/app` | Application composition, hash navigation, shell, workflow provider, and responsive navigation drawer |
 | `src/components` | Shared controls, workflow progress, responsive action footer |
 | `src/features/landing` | Step 0 entry screen |
 | `src/features/selection` | Product catalog, filters, selection rail/list, completion screen |
@@ -19,7 +19,7 @@ This is a client-only React prototype for selecting product families, preparing 
 
 ## State and navigation flow
 
-`App.tsx` translates hash routes into screens and navigation callbacks. `WorkflowProvider` in `WorkflowContext.tsx` owns one reducer-backed `WorkflowState`; the hash is navigation state, not storage for selection or imprint content. Refreshing resets the prototype to its initial state. The Step 1 screen remains mounted while hidden so its local search query and category filter survive navigation to Step 2 and back.
+`App.tsx` translates hash routes into screens and navigation callbacks. `WorkflowProvider` in `WorkflowContext.tsx` owns one reducer-backed `WorkflowState`; the hash is navigation state, not storage for selection or imprint content. Refreshing resets the prototype to its initial state. The Step 1 screen remains mounted while hidden so its local search query and category filter survive navigation to Step 2 and back. `AppShell` owns the shared navigation links and passes an explicit account presentation (`signed-out` by default) to `NavigationDrawer`; that presentation does not represent or infer an authenticated session.
 
 User events flow from a feature component to a narrow context callback, then to `workflowReducer`. The reducer updates selected IDs, active preview family, shared logo/text, bold flags, per-product settings, and workflow step. Product data and capability metadata are read from `src/data`. Pure validation in `domain/workflow/workflowValidation.ts` is the single completion-readiness rule. UI switches also derive disabled/visible state for immediate feedback; the reducer remains the final rule enforcer.
 
@@ -40,6 +40,8 @@ App
       │  └─ ResponsiveStep2 → ImprintTextFields / ProductConfigurationCard / ProductPreviewCarousel
       └─ CompletionScreen (current completion screen)
 ```
+
+The desktop header shows Order History, FAQ, and Support. Support is a normal new-tab anchor to Copeland's White-Rodgers customer-support page. Below 1280 CSS pixels, the header replaces those controls with a native modal drawer. The drawer traps focus, closes with Escape or backdrop click, locks background scrolling, and restores focus; Order History and FAQ retain their existing prototype notices. The drawer's account action is selected from the explicit presentation prop. There is no authentication service, and Sign In/Logout only explain that no session changes occur.
 
 The desktop Step 2 workspace contains the imprint panel, preview panel, and selected-products rail. At widths below 1280 CSS pixels, Step 2 switches to Imprint and Configure Products views; Configure Products has List and Preview tabs. Responsive Step 1 and Step 2 use the fixed shared action footer and full-width workflow progress. The desktop selected-products rail stays integrated at the right edge; its product groups scroll independently while the heading and actions stay visible.
 

@@ -11,13 +11,14 @@
 .logo { height:50px; width:50px; padding:0 11.5px; display:flex; align-items:center; justify-content:center; flex:none; border-right:1px solid #dee4ed; }
 .logo img { width:27px; height:21px; }
 .brandName { margin-left:20px; font-size:14px; line-height:24px; font-weight:700; }
-.navLinks { display:flex; height:100%; margin-left:auto; gap:16px; }
-.navLinks button { color:inherit; background:none; border:0; padding:0 24px; font-size:14px; font-weight:600; }
-.navLinks button:hover { text-decoration:underline; }
+.navLinks { display:flex; height:100%; margin-left:auto; gap:16px; white-space:nowrap; }
+.navLinks :is(button, a) { display:flex; align-items:center; color:inherit; background:none; border:0; padding:0 20px; font:inherit; font-size:14px; font-weight:600; text-decoration:none; }
+.navLinks :is(button, a):hover { text-decoration:underline; }
+.navLinks :is(button, a):focus-visible { outline:2px solid var(--color-focus-indicator); outline-offset:-4px; }
 .account { width:54px; margin-left:0; border:0; background:none; padding:0 15px; height:50px; position:relative; display:grid; place-items:center; flex:none; }
-.account img { width:24px; height:24px; }
-.account span { position:absolute; inset:0; display:grid; place-items:center; font-size:10px; font-weight:700; color:var(--color-text); line-height:16px; }
-.menu { display:none; border:0; background:none; padding:7px; margin-left:8px; width:36px; }
+.account img { display:none; }
+.account span { position:absolute; inset:auto; z-index:1; width:24px; height:24px; border-radius:50%; background:#dee4ed; display:grid; place-items:center; font-family:var(--font-family); font-size:10px; font-weight:700; color:#5f6c78; line-height:16px; }
+.menu { display:none; border:0; background:none; padding:10px; margin-left:8px; width:44px; height:44px; cursor:pointer; }
 .menu span { display:block; height:2px; background:#2a2a26; margin:4px 0; }
 .header :focus-visible { outline-color:var(--color-primary); }
 @media(max-width:1279px) {
@@ -28,6 +29,6 @@
   .nav { padding-right:10px; }
   .brandName { font-size:14px; }
   .navLinks { display:none; }
-  .account { margin-left:auto; }
-  .menu { display:block; }
+  .account { display:none; }
+  .menu { display:block; margin-left:auto; }
 }

@@ -12,6 +12,7 @@ Start with the current-state guides. Phase records are retained as evidence of h
 6. [Storybook guide](storybook-guide.md) — run the component workshop and add focused interactive stories.
 7. [Storybook component coverage](storybook-component-coverage.md) — cataloged production UI components and their scenario coverage.
 8. [Storybook full catalog record](storybook-full-catalog-implementation-record.md) — catalog implementation and closeout verification.
+9. [Navigation drawer implementation record](navigation-drawer-implementation-record.md) — responsive navigation, support link, account presentation, and validation.
 
 ## Status
 

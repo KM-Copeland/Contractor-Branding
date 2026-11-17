@@ -14,6 +14,7 @@ Atomic Design labels describe scale and responsibility. They do not prescribe di
 | `NoticeDialog` | Molecule; nullable `{title, body}` plus `close` callback | Native modal dialog; `aria-labelledby`, cancel/close handling | `Controls.module.css`; app shell destinations |
 | `WorkflowProgress` | Molecule; optional stage and numeric progress | Progressbar role and accessible label/value; responds to 1280px breakpoint and reduced motion | `WorkflowProgress.module.css`; `AppShell` |
 | `ResponsiveActionFooter` | Molecule; Back label/callback, Continue callback/disabled flag, required test ID | Native buttons and visible disabled state; safe-area-aware fixed footer | `ResponsiveActionFooter.module.css`; Step 1 and responsive Step 2 |
+| `NavigationDrawer` | Application organism; controlled `open`, explicit `accountPresentation`, trigger/navigation refs, open-state and placeholder/account action callbacks | Native modal dialog; labelled, focus-contained, Escape/backdrop dismissible, background-scroll locked, and focus restored. Signed-out is the default; Sign In/Logout do not authenticate or mutate a session | `NavigationDrawer.module.css`; `AppShell` below 1280px |
 
 ## Selection feature
 
@@ -48,7 +49,7 @@ Atomic Design labels describe scale and responsibility. They do not prescribe di
 
 ## App and domain contracts
 
-`App` and `Workflow` own hash navigation and route guards. `AppShell` owns global navigation and progress placement. `WorkflowContext` exposes `WorkflowState` and stable callbacks over the reducer. `workflowReducer` is pure; `workflowValidation` is pure and shared by UI and completion guard. `ProductFamily` contains stable ID, category, display names, local image key, capabilities, optional Figma node, and artwork-relative preview placements. `LogoAsset` holds local filename/type/size/object URL metadata; that URL is session-local, not persisted.
+`App` and `Workflow` own hash navigation and route guards. `AppShell` owns global navigation and progress placement. `navigation.ts` is the single source for the desktop/drawer navigation labels and exact Support destination; Support uses a native `_blank` anchor with `noopener noreferrer`. Account presentation is an explicit host prop, separate from authentication. `WorkflowContext` exposes `WorkflowState` and stable callbacks over the reducer. `workflowReducer` is pure; `workflowValidation` is pure and shared by UI and completion guard. `ProductFamily` contains stable ID, category, display names, local image key, capabilities, optional Figma node, and artwork-relative preview placements. `LogoAsset` holds local filename/type/size/object URL metadata; that URL is session-local, not persisted.
 
 ## Coupling and duplication review
 

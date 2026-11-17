@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { App } from '../app/App';
 import { AppShell } from '../app/AppShell';
 import { hasValidImprint, useWorkflow, WorkflowProvider } from '../app/WorkflowContext';
+import { NoticeDialog } from '../components/Controls';
 import { ResponsiveActionFooter } from '../components/ResponsiveActionFooter';
 import { products } from '../data/products';
 import type { ProductFamilyId } from '../types/workflow';
@@ -17,6 +18,7 @@ import { ResponsiveStep2 } from '../features/branding/ResponsiveStep2';
 import { validateLogoFile, type LogoValidationResult } from '../features/branding/logoValidation';
 import { defaultBrandingConfiguration } from '../features/branding/step2Presentation';
 import { figmaAsset } from '../data/products';
+import type { AccountPresentation } from '../app/navigation';
 import { WorkflowScenario, storyProductIds } from './WorkflowScenario';
 import styles from '../features/branding/BrandReview.module.css';
 
@@ -122,9 +124,9 @@ function CarouselContent() {
   return <main className={styles.responsiveMain + ' ' + styles.previewMode} data-step2-view="configure" data-configure-mode="preview"><div className={styles.responsiveContent}><header className={styles.responsiveIntro}><h1>Configure products</h1><p>Swipe or select a product to inspect its imprint.</p></header><div className={styles.configureTabs} role="tablist" aria-label="Configure products display"><button role="tab" aria-selected="false">List</button><button role="tab" aria-selected="true">Preview</button></div><section className={styles.configurePanel}><ProductPreviewCarousel selected={selected} active={active} config={config} branding={state.branding} imprint={state.imprint} hasLogo={hasLogo} hasText={hasText} setActiveProduct={workflow.setActiveProduct} setBranding={workflow.setBranding} /></section></div><ResponsiveActionFooter backLabel="Back to products" onBack={workflow.backToProducts} onContinue={workflow.finish} continueDisabled={!hasValidImprint(state)} testId="storybook-footer" /></main>;
 }
 
-export function AppShellExample({ progress = 'brand-review' }: { progress?: 'select-products' | 'brand-review' | 'complete' | null }) {
-  const [notice, setNotice] = useState('');
-  return <AppShell progress={progress ?? undefined} showNotice={setNotice}><main id="main" style={{ minHeight: '70vh', padding: 32 }}><h1>{progress ? 'Workflow screen' : 'Landing screen'}</h1><p>{progress ? 'Representative content inside the shared navigation and progress shell.' : 'The landing view uses the shared navigation without a workflow progress track.'}</p><p aria-live="polite">{notice && `${notice} notice selected`}</p></main></AppShell>;
+export function AppShellExample({ progress = 'brand-review', accountPresentation = 'signed-out' }: { progress?: 'select-products' | 'brand-review' | 'complete' | null; accountPresentation?: AccountPresentation }) {
+  const [notice, setNotice] = useState<{ title: string; body: string } | null>(null);
+  return <><AppShell progress={progress ?? undefined} accountPresentation={accountPresentation} showNotice={(title, body) => setNotice({ title, body: body ?? 'This section is outside the product-selection prototype.' })}><main id="main" style={{ minHeight: '70vh', padding: 32 }}><h1>{progress ? 'Workflow screen' : 'Landing screen'}</h1><p>{progress ? 'Representative content inside the shared navigation and progress shell.' : 'The landing view uses the shared navigation without a workflow progress track.'}</p></main></AppShell><NoticeDialog notice={notice} close={() => setNotice(null)} /></>;
 }
 
 export function FullWorkflowExample() { return <App />; }
